@@ -31,7 +31,7 @@ const Weather = () => {
 
 
   return (
-    <div>
+    <div className='weather-card'>
       <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
       <button onClick={handleSearch}>Search</button>
       {loading && <p>Loading data...</p>}
