@@ -3,7 +3,6 @@ import WeatherCard from './WeatherCard';
 import axios from 'axios';
 import './Weather.css';
 
-
 const Weather = () => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
@@ -11,8 +10,6 @@ const Weather = () => {
 
   const apiKey = "ac022b79b1ac4544872164219240803";
   const apiURL = "https://api.weatherapi.com/v1/current.json";
-
-
 
   const handleSearch = () => {
     setLoading(true);
@@ -28,13 +25,11 @@ const Weather = () => {
       });
   };
 
-
-
   return (
-    <div className='weather-card'>
+    <div className='weather-container'>
       <input type="text" value={city} placeholder='Enter city name' onChange={(e) => setCity(e.target.value)} />
       <button onClick={handleSearch}>Search</button>
-      {loading && <p>Loading data...</p>}
+      {loading && <p className='loading'>Loading data...</p>}
       {weatherData && <WeatherCard data={weatherData} />}
     </div>
   );
