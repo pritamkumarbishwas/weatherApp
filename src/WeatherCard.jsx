@@ -5,7 +5,7 @@ const WeatherCard = ({ data }) => {
     const { temp_c, humidity, condition, wind_kph } = data.current;
 
     return (
-        <div >
+        <div className="weather-card">
             <div className="weather-info">
                 <div className="weather-info-item">
                     <div className="card">
