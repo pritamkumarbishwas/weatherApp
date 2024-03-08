@@ -16,7 +16,7 @@ const Weather = () => {
 
   const handleSearch = () => {
     setLoading(true);
-  
+
     axios.get(`${apiURL}?key=${apiKey}&q=${city}`)
       .then(response => {
         setWeatherData(response.data);
@@ -27,12 +27,12 @@ const Weather = () => {
         alert('Failed to fetch weather data');
       });
   };
-  
+
 
 
   return (
     <div className='weather-card'>
-      <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
+      <input type="text" value={city} placeholder='Enter city name' onChange={(e) => setCity(e.target.value)} />
       <button onClick={handleSearch}>Search</button>
       {loading && <p>Loading data...</p>}
       {weatherData && <WeatherCard data={weatherData} />}
